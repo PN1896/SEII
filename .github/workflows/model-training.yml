@@ -1,0 +1,47 @@
+name: model-training
+on: pull_request:
+    # Sequence of patterns matched against refs/heads
+    branches:    
+      - main
+      jobs:
+  checkout:
+        steps:
+      - - name: Checkout
+         -uses: actions/checkout@v3.0.0
+  install python:
+      - name: Setup Python
+         uses: actions/setup-python@v3.9.0
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ '2.x', '3.x', 'pypy-2.7', 'pypy-3.7', 'pypy-3.8' ]
+    name: Python ${{ matrix.python-version }} sample
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
+      - run: python my_script.py
+  uses: jannekem/run-python-script-action@v1.2
+  
+ upload artifact:
+       - name: Upload a Build Artifact
+          uses: actions/upload-artifact@v3.0.0
+  steps:
+- uses: actions/checkout@v2
+
+- run: mkdir -p path/to/artifact
+
+- run: echo hello > path/to/artifact/world.txt
+
+- uses: actions/upload-artifact@v3
+  with:
+    name: finalized_model.sav
+    path: pfinalized_model.sav
+
+
+
