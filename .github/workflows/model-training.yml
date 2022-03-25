@@ -18,7 +18,7 @@ steps:
         - run: pip install -r requierements.txt
         - run: python src/train.py
         - uses: actions/upload-artifact@v2
-            with: 
+          with: 
                 name: finalized_model_auto.sav
                 path: /data/
 
