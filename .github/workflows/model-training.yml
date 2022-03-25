@@ -1,47 +1,25 @@
 name: model-training
 on: pull_request:
-    # Sequence of patterns matched against refs/heads
+    types: [opened, reopened,edited,closed]
     branches:    
       - main
 jobs:
-  checkout:
-        steps:
-      - - name: Checkout
-         -uses: actions/checkout@v2
-  install python:
-      - name: Setup Python
-         uses: actions/setup-python@v2
-
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: 'pypy-3.9' 
-    name: Python ${{ matrix.python-version }} sample
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-          architecture: x64
-  - run: python src/model_train.py
-  uses: jannekem/run-python-script-action@v1.2
+  runs on: ubuntu-20.4
   
- upload artifact:
-       - name: Upload a Build Artifact
-          uses: actions/upload-artifact@v3.0.0
+steps:
+          #checksout the repository
+        - uses: actions/checkout@v2
+         #setup python
+        - name: Setup Python
+          uses: actions/setup-python@v2
+          with: 
+            python-version: "3.9"
+            architecture: "x64"
+        - run: pip install -r requierements.txt
+        - run: python src/train.py
+        - uses: actions/upload-artifact@v2
+            with: 
+                name: finalized_model_auto.sav
+                path: /data/
+
   
-- uses: actions/checkout@v2
-
-- run: mkdir -p path/to/artifact
-
-- run: echo hello > path/to/artifact/world.txt
-
-- uses: actions/upload-artifact@v3
-  with:
-    name: finalized_model.sav
-    path: /data/
-
-
-
