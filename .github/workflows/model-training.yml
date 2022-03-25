@@ -20,6 +20,6 @@ steps:
         - uses: actions/upload-artifact@v2
           with: 
             name: finalized_model_auto.sav
-            path: /data/
+            path: /data/finalized_model_auto.sav
 
   
