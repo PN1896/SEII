@@ -1,7 +1,7 @@
 name: model-training
 on:
     pull_request: 
-    types: [opened, reopened, edited, closed]
+        types: [opened, reopened, edited, closed]
             
 jobs:
   runs on: ubuntu-20.4
