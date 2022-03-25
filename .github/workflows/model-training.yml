@@ -4,9 +4,9 @@ on:
         types: [opened, reopened, edited, closed]
             
 jobs:
-  runs on: ubuntu-20.4
+     runs on: ubuntu-20.4
   
-steps:
+    steps:
           #checksout the repository
         - uses: actions/checkout@v2
          #setup python
