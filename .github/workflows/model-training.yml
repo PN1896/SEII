@@ -17,9 +17,9 @@ steps:
             architecture: "x64"
         - run: pip install -r requierements.txt
         - run: python src/train.py
-        - uses: actions/upload-artifact@v2
-          with: 
-            name: finalized_model_auto.sav
-            path: /finalized_model_auto.sav
+        #- uses: actions/upload-artifact@v2
+        #  with: 
+         #   name: finalized_model_auto.sav
+         #   path: /finalized_model_auto.sav
 
   
