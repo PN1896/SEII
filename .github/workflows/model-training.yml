@@ -3,7 +3,7 @@ on: pull_request:
     # Sequence of patterns matched against refs/heads
     branches:    
       - main
-      jobs:
+jobs:
   checkout:
         steps:
       - - name: Checkout
@@ -25,13 +25,13 @@ on: pull_request:
         with:
           python-version: ${{ matrix.python-version }}
           architecture: x64
-      - run: python my_script.py
+  - run: python src/model_train.py
   uses: jannekem/run-python-script-action@v1.2
   
  upload artifact:
        - name: Upload a Build Artifact
           uses: actions/upload-artifact@v3.0.0
-  steps:
+  
 - uses: actions/checkout@v2
 
 - run: mkdir -p path/to/artifact
@@ -41,7 +41,7 @@ on: pull_request:
 - uses: actions/upload-artifact@v3
   with:
     name: finalized_model.sav
-    path: pfinalized_model.sav
+    path: /data/
 
 
 
