@@ -27,7 +27,7 @@ model =model.fit(X_train,Y_train)
 y_pred = model.predict(X_test)
 #print(y_pred)
 # save the model to disk
-filename = 'finalized_model.sav'
+filename = 'finalized_model_auto.sav'
 pickle.dump(model, open(filename, 'wb'))
 print(model.score(X_test, Y_test))
 
