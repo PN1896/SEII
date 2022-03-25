@@ -19,7 +19,7 @@ steps:
         - run: python src/train.py
         - uses: actions/upload-artifact@v2
           with: 
-                name: finalized_model_auto.sav
-                path: /data/
+            name: finalized_model_auto.sav
+            path: /data/
 
   
