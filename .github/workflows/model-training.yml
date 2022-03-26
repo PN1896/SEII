@@ -24,5 +24,3 @@ jobs:
           with: 
             name: finalized_model_auto.sav
             path: /finalized_model_auto.sav
-
-  
