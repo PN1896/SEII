@@ -4,6 +4,7 @@ on:
         types: [opened, reopened, edited, closed]
             
 jobs:
+   first_job:
     name: First job
     runs on: ubuntu-20.4
   
