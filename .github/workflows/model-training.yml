@@ -2,14 +2,14 @@ name: model-training
 on:
   pull_request:
     types: [opened, reopened, edited, closed]
-  workflow dispatch:
+  workflow_dispatch:
 jobs:
   first_job:
     name: First job
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-    #setup python
+
       - name: Setup Python
       - uses: actions/setup-python@v2
         with:
@@ -22,4 +22,4 @@ jobs:
         with:
           name: finalized_model_auto.sav
           path: /finalized_model_auto.sav
-#test12345
+#test123456
