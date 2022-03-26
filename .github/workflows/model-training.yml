@@ -4,8 +4,9 @@ on:
         types: [opened, reopened, edited, closed]
             
 jobs:
-
-    runs-on: ubuntu-20.4
+  first_job:
+    name: First job
+    runs-on: ubuntu-20.04
   
     steps:
           #checksout the repository
