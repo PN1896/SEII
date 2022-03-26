@@ -2,7 +2,7 @@ name: model-training
 on:
   pull_request:
     types: [opened, reopened, edited, closed]
-  workflow dispatch:
+  workflow_dispatch:
 jobs:
   first_job:
     name: First job
