@@ -15,7 +15,7 @@ jobs:
 
       - run: pip install -r depend.txt
       - name: run training
-        run: python src/train.py
+        run: python train.py
       - name: save model
         uses: actions/upload-artifact@v2
         with:
