@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: "3.9"
 
-      - run: pip install -r src/requirements.txt
+      - run: pip install -r requirements.txt
       - name: run training
         run: python src/train.py
       - name: save model
@@ -21,4 +21,4 @@ jobs:
         with:
           name: finalized_model_auto.sav
           path: /finalized_model_auto.sav
-#test1234567
+#test12345678
