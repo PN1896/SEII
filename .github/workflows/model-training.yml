@@ -2,17 +2,16 @@ name: model-training
 on:
   pull_request:
     types: [opened, reopened, edited, closed]
-
+  workflow dispatch:
 jobs:
   first_job:
     name: First job
     runs-on: ubuntu-20.04
-
     steps:
       - uses: actions/checkout@v2
     #setup python
       - name: Setup Python
-        uses: actions/setup-python@v2
+      - uses: actions/setup-python@v2
         with:
           python-version: "3.9"
           architecture: "x64"
