@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: "3.9"
 
-      - run: pip install -r requirements.txt
+      - run: pip install -r depend.txt
       - name: run training
         run: python src/train.py
       - name: save model
