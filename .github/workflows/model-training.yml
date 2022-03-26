@@ -14,8 +14,9 @@ jobs:
           python-version: "3.9"
       - name: install dependencies
         run: pip install -r requierements.txt
+      - name: run training
         run: python src/train.py
-
+      - name: save model
         - uses: actions/upload-artifact@v2
           with:
             name: finalized_model_auto.sav
