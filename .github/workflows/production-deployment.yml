@@ -28,7 +28,7 @@ jobs:
       - name: Upload trained model
         uses: actions/upload-artifact@v2
         with:
-          name: model auto
+          name: model pickle 
           path: data/model/trained_model.pickle
       - name: Push changes to heroku branch
         shell: bash
