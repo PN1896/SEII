@@ -7,6 +7,7 @@ colorama==0.4.4
 flake8==4.0.1
 Flask==2.1.1
 Flask-Cors==3.0.10
+gunicorn==20.1.0
 idna==3.3
 importlib-metadata==4.11.3
 iniconfig==1.1.1
@@ -34,5 +35,6 @@ sklearn==0.0
 threadpoolctl==3.1.0
 tomli==2.0.1
 urllib3==1.26.9
+waitress==2.1.1
 Werkzeug==2.1.1
 zipp==3.8.0
