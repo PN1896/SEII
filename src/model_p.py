@@ -10,7 +10,7 @@ array = data.values
 print (array.shape)
 # Select 1st column for Y and the rest for X
 Y = array[:,0]
-X = array[:,1:5]
+X = array[:,1:6]
 #print(X)
 print(len(Y))
 print(len(X))
@@ -20,7 +20,7 @@ X_train, X_test, Y_train, Y_test = model_selection.train_test_split(X, Y, test_s
 model = LinearRegression()
 # load the model from disk
 
-filename = 'finalized_model.sav'
+filename = 'data/model/trained_model.pickle'
 loaded_model = pickle.load(open(filename, 'rb'))
 result = loaded_model.score(X_test, Y_test)
 

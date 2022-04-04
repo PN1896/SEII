@@ -28,6 +28,8 @@ y_pred = model.predict(X_test)
 #print(y_pred)
 # save the model to disk
 filename = 'finalized_model_auto.sav'
-pickle.dump(model, open(filename, 'wb'))
+
+file_to_write = open("data/model/trained_model.pickle", "wb")
+pickle.dump(model, file_to_write)
 print(model.score(X_test, Y_test))
 
