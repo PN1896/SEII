@@ -12,7 +12,7 @@ array = data.values
 print (array.shape)
 # Select 1st column for Y and the rest for X
 Y = array[:,0]
-X = array[:,1:5]
+X = array[:,1:6]
 #print(X)
 print(len(Y))
 print(len(X))
